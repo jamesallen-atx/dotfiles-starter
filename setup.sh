@@ -12,6 +12,11 @@ HOME_DIR="$HOME"
 
 touch "$DOTFILES_DIR/.toolsrc"
 
+if [[ $(uname) == *"Darwin"* ]];
+then
+	ln -snf "$DOTFILES_DIR/.bash_profile" "$HOME_DIR/.profile"
+fi
+
 for file in .bash_aliases .bash_completions .bash_functions .bash_profile .bashrc .toolsrc
 do
     # symlink the dotfiles to the home directory
