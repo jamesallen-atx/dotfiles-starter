@@ -3,6 +3,9 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+# unset the command prompt variable so that it doesn't get inherited by subshells or tmux
+unset PROMPT_COMMAND
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -135,6 +138,14 @@ fi
 
 if [ -f ~/.bash_completions ]; then
     . ~/.bash_completions
+fi
+
+if [ -f ~/.bash_path ]; then
+    . ~/.bash_path
+fi
+
+if [ -f ~/.extra ]; then
+    . ~/.extra
 fi
 
 if [ -f ~/.toolsrc ]; then

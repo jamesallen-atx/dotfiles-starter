@@ -6,10 +6,6 @@ then
 	alias pbpaste='powershell.exe Get-Clipboard'
 	# Trim new lines and copy to clipboard
 	alias c="tr -d '\\n' | clip.exe"
-	# Pipe my public key to my clipboard.
-	alias pubkey="more ~/.ssh/id_rsa.pub | clip.exe | echo '=> Public key copied to pasteboard.'"
-	# Pipe my private key to my clipboard.
-	alias prikey="more ~/.ssh/id_rsa | clip.exe | echo '=> Private key copied to pasteboard.'"
 	# Note: Bash on Windows does not currently apply umask properly.
 	if [ "$(umask)" = "0000" ]; then
 		umask 022
@@ -23,10 +19,6 @@ then
 	alias pbpaste='xclip -selection clipboard -o'
 	# Trim new lines and copy to clipboard
 	alias c="tr -d '\\n' | xclip -selection clipboard"
-	# Pipe my public key to my clipboard.
-	alias pubkey="more ~/.ssh/id_rsa.pub | xclip -selection clipboard | echo '=> Public key copied to pasteboard.'"
-	# Pipe my private key to my clipboard.
-	alias prikey="more ~/.ssh/id_rsa | xclip -selection clipboard | echo '=> Private key copied to pasteboard.'"
 fi
 
 if [[ $(uname) == *"Darwin"* ]];
@@ -46,7 +38,7 @@ alias .....="cd ../../../.."
 
 # Shortcuts
 
-alias reloadbash="source ~/.profile && echo Bash config reloaded"
+alias reloadbash="source ~/.bashrc && echo '==> Bash config reloaded'"
 alias ping='ping -c 5'
 alias foldersize='du -h -d1'
 alias drives='df -h'
