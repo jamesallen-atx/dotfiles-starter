@@ -17,7 +17,7 @@ then
 	ln -snf "$DOTFILES_DIR/.bash_profile" "$HOME_DIR/.profile"
 fi
 
-for file in .bash_aliases .bash_completions .bash_functions .bash_profile .bashrc .toolsrc
+for file in .bash_aliases .bash_functions .bash_profile .bashrc .toolsrc
 do
     # symlink the dotfiles to the home directory
     ln -snf "$DOTFILES_DIR/$file" "$HOME_DIR/$file"
